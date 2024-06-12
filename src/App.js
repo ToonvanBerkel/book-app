@@ -10,12 +10,14 @@ import './App.css';
 function App() {
   return (
     <Router>
-      <Navigation />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="about" element={<About />} />
-        <Route path="contact" element={<Contact />} />
-        <Route path="*" element={<NoPage />} />
+        <Route path="/" element={<Navigation />}>
+          <Route index element={<Home />} />
+          <Route path="home" element={<Home />} />
+          <Route path="about" element={<About />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="*" element={<NoPage />} />
+        </Route>
       </Routes>
     </Router>
   );
